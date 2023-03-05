@@ -9,7 +9,7 @@ export const HeaderContainer = styled.header`
 export const HeaderContent = styled.div`
     width:100%;
     max-width: 1120px;
-    margin:auto;
+    margin: 0 auto;
     padding: 0 1.5rem;
 
     display:flex;
@@ -27,7 +27,7 @@ export const NewTransactionButton = styled.button`
     font-weight: bold;
     padding: 0 1.25rem;
     cursor: pointer;
-    
+
     &:hover {
         transition: background-color 0.2s;
         background: ${props=>props.theme['green-700']};
