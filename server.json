@@ -1,0 +1,16 @@
+{"transactions":[{
+    "id":1,
+    "description":"Website Development",
+    "type":"income",
+    "category":"Sell",
+    "price":144000,
+    "createdAt":"2023-03-06T04:20:50.379Z"
+},
+{
+    "id":2,
+    "description":"Hamburguer",
+    "type":"outcome",
+    "category":"Food",
+    "price":10,
+    "createdAt":"2023-03-06T04:20:50.379Z"
+}]}
