@@ -1,4 +1,4 @@
-import { ReactNode, useCallback, useEffect, useState } from 'react'
+import { ReactNode, useCallback, useEffect, useMemo, useState } from 'react'
 import { createContext } from 'use-context-selector'
 import { api } from '../lib/axios.js'
 
@@ -61,10 +61,12 @@ export function TransactionProvider({ children }: TransactionProviderProps) {
     fecthTransactions()
   }, [fecthTransactions])
 
+  const contextObject = useMemo(() => {
+    return { transactions, fecthTransactions, createNewTransaction }
+  }, [transactions, fecthTransactions, createNewTransaction])
+
   return (
-    <TransactionContext.Provider
-      value={{ transactions, fecthTransactions, createNewTransaction }}
-    >
+    <TransactionContext.Provider value={contextObject}>
       {children}
     </TransactionContext.Provider>
   )
