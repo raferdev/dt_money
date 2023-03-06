@@ -2,7 +2,7 @@ import * as Dialog  from "@radix-ui/react-dialog";
 import { ArrowCircleDown, ArrowCircleUp, X } from "phosphor-react";
 import { CloseButton, Content, Overlay, TransactionType, TransactionTypeButton } from "./styles.js";
 import * as z from 'zod';
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const newTransactionFormSchema = z.object({
@@ -16,6 +16,7 @@ type NewTransactionFormSchema = z.infer<typeof newTransactionFormSchema>
 
 export function NewTransactionModal() {
     const {
+        control,
         register,
          handleSubmit,
          formState:{isSubmitting}
@@ -42,7 +43,13 @@ export function NewTransactionModal() {
                 <input type='text' placeholder="Description" required {...register('description')}/>
                 <input type='number' placeholder="Price" required {...register('price')}/>
                 <input type='text' placeholder="Category" required {...register('type')}/>
-            <TransactionType>
+            
+            <Controller
+             control={control}
+              name="type"
+               render={({field}) => {
+                return (
+            <TransactionType onValueChange={field.onChange} value={field.value}>
             <TransactionTypeButton value="income" variant="income">
                 <ArrowCircleUp size={24}/>
                  Debit
@@ -52,6 +59,8 @@ export function NewTransactionModal() {
                  Credit
                 </TransactionTypeButton>
             </TransactionType>
+                )
+             } } />
 
             <button type="submit" disabled={isSubmitting}>
             Submit
