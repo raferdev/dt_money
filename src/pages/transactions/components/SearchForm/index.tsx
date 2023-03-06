@@ -5,6 +5,8 @@ import { SearchFormContainer } from "./styles.js";
 import * as z from 'zod';
 
 import {zodResolver} from '@hookform/resolvers/zod';
+import { useContext } from "react";
+import { TransactionContext } from "../../../../contexts/TransactionContext.js";
 
 const searchFormSchema = z.object({
     query: z.string(),
@@ -13,6 +15,7 @@ const searchFormSchema = z.object({
 type SearchFormInput = z.infer<typeof searchFormSchema>
 
 export function SearchForm() {
+    const {fecthTransactions} = useContext(TransactionContext)
     const {
         register,
          handleSubmit,
@@ -22,8 +25,9 @@ export function SearchForm() {
     );
 
    async function hangleSearchTransaction(data:SearchFormInput) {
-    console.log(data)
+    await fecthTransactions(data.query)
     }
+    
     return(
         <SearchFormContainer onSubmit={handleSubmit(hangleSearchTransaction)}>
             <input type='text' placeholder="Search transactions..." {...register}/>
