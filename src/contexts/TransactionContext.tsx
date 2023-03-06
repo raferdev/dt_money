@@ -54,6 +54,7 @@ export function TransactionProvider({ children }: TransactionProviderProps) {
         q: query,
       },
     })
+
     setTransactions(response.data)
   }, [])
 

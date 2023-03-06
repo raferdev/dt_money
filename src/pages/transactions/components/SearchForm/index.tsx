@@ -28,13 +28,17 @@ function SearchFormComponent() {
     formState: { isSubmitting },
   } = useForm<SearchFormInput>({ resolver: zodResolver(searchFormSchema) })
 
-  async function hangleSearchTransaction(data: SearchFormInput) {
+  async function handleSearchTransaction(data: SearchFormInput) {
     await fecthTransactions(data.query)
   }
 
   return (
-    <SearchFormContainer onSubmit={handleSubmit(hangleSearchTransaction)}>
-      <input type="text" placeholder="Search transactions..." {...register} />
+    <SearchFormContainer onSubmit={handleSubmit(handleSearchTransaction)}>
+      <input
+        type="text"
+        placeholder="Search transactions..."
+        {...register('query')}
+      />
 
       <button type="submit" disabled={isSubmitting}>
         <MagnifyingGlass size={20} />
