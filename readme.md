@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://pomodoro-timer-ebon.vercel.app/">
- <img width=100px height=150px src="./readme_assets/logo-timer.svg" alt="Project logo"></a>
+ <img width=100px height=150px src="./readme_assets/logo.svg" alt="Project logo"></a>
 </p>
 
 <h3 align="center">Ignite Project</h3>
@@ -17,7 +17,7 @@
 
 ---
 
-<p align="center"> This app was created on Rocketseat course and was build to improve the ReactJS fundamentals, like, contexts and reducers and was created using Typescript, Styled Components and by Vite. Is a basic social media layout and use css module package.
+<p align="center"> This app was created on Rocketseat course and was build to improve the ReactJS advanced concepts, like, useCallback, memo and useMemo. It's resume the best options to api RESTFUll request from frontend to backend. Language: Typescript, some libs: Axios, Styled Components, Radix-UI, React hook form and more.
 </p>
 
 ## 📝 Table of Contents
@@ -30,7 +30,7 @@
 
 ## 🧐 About <a name = "about"></a>
 
-This project is the second part of Rocketseat ReactJs course with i am using to stay solid with the most actual and best practices on frontend projects. This is a countdown timer which you can use to control pomodoro methods or any task duration.
+This project is the third part of Rocketseat ReactJs course with i am using to stay solid with the most actual and best practices on frontend projects. This project simulate a wallet in a bank account with transactions options and monetary balance.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 

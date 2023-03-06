@@ -1,0 +1,36 @@
+import { Transaction } from '../contexts/TransactionContext.js'
+
+export const DATA: Transaction[] = [
+  {
+    id: 1,
+    description: 'Website Development',
+    type: 'income',
+    category: 'Jobs',
+    price: 14400,
+    createdAt: '2023-01-20T04:20:50.379Z',
+  },
+  {
+    id: 2,
+    description: 'Hamburguer',
+    type: 'outcome',
+    category: 'Food',
+    price: 10,
+    createdAt: '2023-01-28T04:20:50.379Z',
+  },
+  {
+    description: 'Netflix Microsservice NodeJS',
+    type: 'income',
+    category: 'Jobs',
+    price: 330000,
+    createdAt: '2023-02-02T19:42:46.486Z',
+    id: 3,
+  },
+  {
+    description: 'Laptop',
+    type: 'outcome',
+    category: 'Devices',
+    price: 21213,
+    createdAt: '2023-03-03T20:03:02.673Z',
+    id: 4,
+  },
+]

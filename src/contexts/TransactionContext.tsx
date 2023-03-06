@@ -1,8 +1,9 @@
 import { ReactNode, useCallback, useEffect, useMemo, useState } from 'react'
 import { createContext } from 'use-context-selector'
+import { DATA } from '../assets/build_data.js'
 import { api } from '../lib/axios.js'
 
-interface Transaction {
+export interface Transaction {
   id: number
   description: string
   type: 'income' | 'outcome'
@@ -33,29 +34,46 @@ export function TransactionProvider({ children }: TransactionProviderProps) {
 
   const createNewTransaction = useCallback(
     async ({ description, type, category, price }: CreateTransactionProps) => {
-      const response = await api.post('transactions', {
-        description,
-        type,
-        category,
-        price,
-        createdAt: new Date(),
-      })
+      try {
+        const response = await api.post('transactions', {
+          description,
+          type,
+          category,
+          price,
+          createdAt: new Date(),
+        })
 
-      setTransactions((transactions) => [response.data, ...transactions])
+        setTransactions((transactions) => [response.data, ...transactions])
+      } catch (e) {
+        setTransactions((transactions) => {
+          const transaction = {
+            id: transactions.length,
+            description,
+            type,
+            category,
+            price,
+            createdAt: new Date().toString(),
+          }
+          return [transaction, ...transactions]
+        })
+      }
     },
     [],
   )
 
   const fecthTransactions = useCallback(async (query?: string) => {
-    const response = await api.get('transactions', {
-      params: {
-        _sort: 'createdAt',
-        _order: 'desc',
-        q: query,
-      },
-    })
-
-    setTransactions(response.data)
+    try {
+      const response = await api.get('transactions', {
+        params: {
+          _sort: 'createdAt',
+          _order: 'desc',
+          q: query,
+        },
+      })
+      setTransactions(response.data)
+    } catch (e) {
+      setTransactions(DATA)
+    }
   }, [])
 
   useEffect(() => {
