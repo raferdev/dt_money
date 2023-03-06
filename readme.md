@@ -17,7 +17,7 @@
 
 ---
 
-<p align="center"> This app was created on Rocketseat course and was build to improve the ReactJS advanced concepts, like, useCallback, memo and useMemo. It's resume the best options to api RESTFUll request from frontend to backend. Language: Typescript, some libs: Axios, Styled Components, Radix-UI, React hook form and more.
+<p align="center"> This app was created on Rocketseat course and was build to improve the ReactJS advanced concepts, like, useCallback, memo and useMemo, and more about modals and accessibility. It's resume the best options to api RESTFUll request from frontend to backend. Language: Typescript, some libs: Axios, Styled Components, Radix-UI, React hook form and more.
 </p>
 
 ## 📝 Table of Contents
@@ -62,12 +62,8 @@ http://localhost:5173
 
 ## 🎈 Usage <a name="usage"></a>
 
-You can add new project on the text input and set the duration in minutes on the right side.
-
-- Click on start button.
-- You can cancel it when you decide just click on the stop button.
-- When the timer comes to zero the task automaticaly goes to history has done and you can start another task.
-- Click on the icon "paper" on the top right side to go to history page, here you can see the list of tasks you finished, cancel or are running.
+- You can see the list of transactions received from API.
+- You can add new transactions by click on "New Transaction" button.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
