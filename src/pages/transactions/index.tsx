@@ -27,10 +27,12 @@ export function Transactions() {
               return (
                 <tr key={transaction.id}>
                   <td width="50%">{transaction.description}</td>
-                  <PriceHighLight variant={transaction.type}>
-                    {transaction.type === 'outcome' && '- '}
-                    {priceFormatter.format(transaction.price)}
-                  </PriceHighLight>
+                  <td>
+                    <PriceHighLight variant={transaction.type}>
+                      {transaction.type === 'outcome' && '- '}
+                      {priceFormatter.format(transaction.price)}
+                    </PriceHighLight>
+                  </td>
                   <td>{transaction.category}</td>
                   <td>
                     {dateFormatter.format(new Date(transaction.createdAt))}
