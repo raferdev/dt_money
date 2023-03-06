@@ -106,18 +106,17 @@ export const TransactionTypeButton = styled(
         : props.theme['red-300']};
   }
 
-  &[date-state='unchecked']:hover {
-    background: ${(props) => props.theme['gray-600']};
+  &[data-state='unchecked']:hover {
+    background: ${(props) => props.theme['gray-500']};
     transition: background-color 0.2s;
   }
 
-  &[date-state='checked'] {
+  &[data-state='checked'] {
     color: ${(props) => props.theme.white};
     background: ${(props) =>
       props.variant === 'income'
-        ? props.theme['green-500']
-        : props.theme['red-500']};
-
+        ? props.theme['green-300']
+        : props.theme['red-300']};
     svg {
       color: ${(props) => props.theme.white};
     }

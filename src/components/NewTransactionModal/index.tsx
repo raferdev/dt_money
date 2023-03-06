@@ -37,10 +37,13 @@ export function NewTransactionModal() {
     reset,
   } = useForm<NewTransactionFormSchema>({
     resolver: zodResolver(newTransactionFormSchema),
+    defaultValues: {
+      type: 'income',
+    },
   })
 
-  async function hangleCreateNewTransaction(data: NewTransactionFormSchema) {
-    createNewTransaction(data)
+  async function handleCreateNewTransaction(data: NewTransactionFormSchema) {
+    await createNewTransaction(data)
 
     reset()
   }
@@ -54,7 +57,7 @@ export function NewTransactionModal() {
           <X size={24} />
         </CloseButton>
 
-        <form onSubmit={handleSubmit(hangleCreateNewTransaction)}>
+        <form onSubmit={handleSubmit(handleCreateNewTransaction)}>
           <input
             type="text"
             placeholder="Description"
@@ -65,13 +68,13 @@ export function NewTransactionModal() {
             type="number"
             placeholder="Price"
             required
-            {...register('price')}
+            {...register('price', { valueAsNumber: true })}
           />
           <input
             type="text"
             placeholder="Category"
             required
-            {...register('type')}
+            {...register('category')}
           />
 
           <Controller
