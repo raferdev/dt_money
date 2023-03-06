@@ -11,7 +11,7 @@ export const SummaryContainer = styled.section`
   padding: 0 1.5rem;
 
   display: grid;
-  grid-template-columns: repeat(3 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 
   margin-top: -5rem;
