@@ -15,7 +15,7 @@ export const Content = styled(Dialog.Content)`
   border-radius: 4px;
   padding: 2.5rem 3rem;
 
-  background: ${(props) => props.theme['gray-300']};
+  background: ${(props) => props.theme['gray-700']};
 
   position: fixed;
   top: 50%;
@@ -41,9 +41,9 @@ export const Content = styled(Dialog.Content)`
       color: ${(props) => props.theme['gray-500']};
     }
     button[type='submit'] {
-      height: 10px;
+      height: 58px;
       border: 0;
-      background: ${(props) => props.theme['gray-500']};
+      background: ${(props) => props.theme['green-500']};
       color: ${(props) => props.theme.white};
       font-weight: bold;
       padding: 0 1.25rem;
@@ -57,7 +57,7 @@ export const Content = styled(Dialog.Content)`
       }
 
       &:not(:disabled):hover {
-        background: ${(props) => props.theme['gray-700']};
+        background: ${(props) => props.theme['green-300']};
         transition: background-color 0.2s;
       }
     }
@@ -89,7 +89,7 @@ interface TransactionTypeButtonProps {
 export const TransactionTypeButton = styled(
   RadioGroup.Item,
 )<TransactionTypeButtonProps>`
-  background: ${(props) => props.theme['gray-700']};
+  background: ${(props) => props.theme['gray-600']};
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -98,7 +98,8 @@ export const TransactionTypeButton = styled(
   border-radius: 6px;
   cursor: pointer;
   border: 0;
-  color: ${(props) => props.theme['gray-300']} svg {
+  color: ${(props) => props.theme['gray-300']};
+  svg {
     color: ${(props) =>
       props.variant === 'income'
         ? props.theme['green-300']
