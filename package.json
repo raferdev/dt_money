@@ -8,8 +8,8 @@
     "dev:server": "json-server server.json -p 5000 -w -d 500",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint":"npx eslint src --ext .tsx,.ts",
-    "lint:fix":"npx eslint src --ext .tsx,.ts --fix"
+    "lint": "npx eslint src --ext .tsx,.ts",
+    "lint:fix": "npx eslint src --ext .tsx,.ts --fix"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.11",
@@ -21,7 +21,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.4",
+    "scheduler": "^0.23.0",
     "styled-components": "^5.3.8",
+    "use-context-selector": "^1.4.1",
     "zod": "^3.21.1"
   },
   "devDependencies": {

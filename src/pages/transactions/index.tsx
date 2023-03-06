@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContextSelector } from 'use-context-selector'
 import { Header } from '../../components/Header/index.js'
 import { Summary } from '../../components/Summary/index.js'
 import { TransactionContext } from '../../contexts/TransactionContext.js'
@@ -11,7 +11,10 @@ import {
 } from './styles.js'
 
 export function Transactions() {
-  const { transactions } = useContext(TransactionContext)
+  const transactions = useContextSelector(TransactionContext, (context) => {
+    return context.transactions
+  })
+
   return (
     <div>
       <Header />
