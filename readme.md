@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://pomodoro-timer-ebon.vercel.app/">
+  <a href="https://dt-money-phi-seven.vercel.app/">
  <img width=100px height=150px src="./readme_assets/logo.svg" alt="Project logo"></a>
 </p>
 
@@ -34,7 +34,7 @@ This project is the third part of Rocketseat ReactJs course with i am using to s
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-You can clone the project and start on your local host or open the site hospeded <a href="https://ignite-social-ten.vercel.app">here</a>
+You can clone the project and start on your local host or open the site hospeded <a href="https://dt-money-phi-seven.vercel.app/">here</a>
 
 Clone
 
